@@ -135,14 +135,14 @@ namespace CR_COMMAND_EXT_snow
                                                 // Create a SqlConnection object and connect to the database.
                                                 using (IDbConnection conn = new SnowflakeDbConnection())
                                                 {
-                                                    conn.ConnectionString = "account=psjh_prod.west-us-2.azure;user=debra.quarles@providence.org;authenticator=externalbrowser;warehouse=ACOE_WH_S;db=ACOE_SANDBOX;schema=P418549";
+                                                    conn.ConnectionString = "account= ADD ACCOUNT HERE ;user=ADD USER EMAIL HERE;authenticator=ADD AUTH - externalbrowser;warehouse=ADD WH;db=ADD DATABASE;schema=ADD SCHEMA";
 
                                                     //Open the SqlConnection object
                                                     conn.Open();
 
                                                     // Create a SqlCommand object and specify the SQL INSERT statement.
                                                     IDbCommand cmd = conn.CreateCommand();
-                                                    cmd.CommandText = "INSERT INTO P418549.CR_Command_Extract(CRRPT_NM,CRRPT_PATH,CRRPT_SQL_CD,CRRPT_SUBSQL_CD) VALUES (:filename,:srcfilePath,:commandSql,:commandSubSql)";
+                                                    cmd.CommandText = "INSERT INTO XXXXXXX.CR_Command_Extract(CRRPT_NM,CRRPT_PATH,CRRPT_SQL_CD,CRRPT_SUBSQL_CD) VALUES (:filename,:srcfilePath,:commandSql,:commandSubSql)";
 
                                                     // Set the parameters of the SqlCommand object with the values from the report document.
                                                     var p1 = cmd.CreateParameter();
@@ -243,13 +243,13 @@ namespace CR_COMMAND_EXT_snow
                                                     // Create a SqlConnection object and connect to the database.
                                                     using (IDbConnection conn = new SnowflakeDbConnection())
                                                     {
-                                                        conn.ConnectionString = "account=psjh_prod.west-us-2.azure;user=debra.quarles@providence.org;authenticator=externalbrowser;warehouse=ACOE_WH_S;db=ACOE_SANDBOX;schema=P418549";
+                                                        conn.ConnectionString = ""account = ADD ACCOUNT HERE; user = ADD USER EMAIL HERE; authenticator = ADD AUTH - externalbrowser; warehouse = ADD WH; db = ADD DATABASE; schema = ADD SCHEMA";;
 
                                                         //Open the SqlConnection object
                                                         conn.Open();
                                                         // Create a SqlCommand object and specify the SQL INSERT statement.
                                                         IDbCommand cmdsub = conn.CreateCommand();
-                                                        cmdsub.CommandText = "INSERT INTO P418549.CR_Command_Extract(CRRPT_NM,CRRPT_PATH,CRRPT_SUBSUBSQL_CD) VALUES (:filename,:srcfilePath,:commandSubsubSql)";
+                                                        cmdsub.CommandText = "INSERT INTO XXXXXXX.CR_Command_Extract(CRRPT_NM,CRRPT_PATH,CRRPT_SUBSUBSQL_CD) VALUES (:filename,:srcfilePath,:commandSubsubSql)";
 
                                                         var p5 = cmdsub.CreateParameter();
                                                         p5.ParameterName = "filename";
@@ -318,11 +318,11 @@ namespace CR_COMMAND_EXT_snow
                 }
 
             }
-                                    
-                //Begin the Green progress bar - When ALL files in the chosen folder are processed show "Done"
-                await ProcessData(list, progress);
-                label2.Text = "Done !";
-            }
+
+            //Begin the Green progress bar - When ALL files in the chosen folder are processed show "Done"
+            await ProcessData(list, progress);
+            label2.Text = "Done !";
+        }
 
         //Exit Button to exit the form and close
         private void button3_Click(object sender, EventArgs e)
@@ -332,7 +332,7 @@ namespace CR_COMMAND_EXT_snow
             }
         }
         //Label to instruct to Navigate to Directory Path
-            private void label1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
